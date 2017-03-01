@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="UnityDetectiveGame.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NumpadController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\KeyController.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\KeysController.cs" Line="118" Column="1" />
+      <File FileName="Assets\Scripts\LockController.cs" Line="110" Column="1" />
+      <File FileName="Assets\Scripts\NumpadController.cs" Line="100" Column="31" />
+      <File FileName="Assets\Scripts\PadController.cs" Line="10" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
