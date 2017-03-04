@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Character/Example.unity
+- path: Assets/Scenes/floor 1.unity
   isLoaded: 1
   isActive: 1
