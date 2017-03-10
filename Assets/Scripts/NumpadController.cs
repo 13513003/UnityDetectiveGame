@@ -10,7 +10,8 @@ public class NumpadController : MonoBehaviour {
 	public KeyCode Down = KeyCode.S;
 	public Transform RPB;
 	public Transform PB;
-	public float timeBetweenFlicks = 0.25f;
+	public DoorController doorController;
+	public float timeBetweenFlicks = 0.1f;
 	public string password; // password to unlock key
 	string answer; // string to concatenate answer
 	float timer;
@@ -94,9 +95,11 @@ public class NumpadController : MonoBehaviour {
 				}
 				if (answer.Equals (password)){
 					Debug.Log ("Answer "+ answer + " is Correct");
+					doorController.unlockDoor ();
 				} else {
 					Debug.Log ("Answer "+ answer + " is Wrong");
 				}
+				answer = "";
 			} else if (activeKey < 4) {
 				keys [activeKey].text = padControllers[position].getKeyValue();
 				activeKey++;
@@ -109,28 +112,6 @@ public class NumpadController : MonoBehaviour {
 
 	//on button click input
 	public void inputAnswer(int pos, Vector3 newPosition) {
-		/*if (keyValue.Equals("erase") && activeKey > 0) {
-			activeKey--;
-			keys [activeKey].text = "";
-		} else if (keyValue.Equals("check")) {
-			foreach (Text key in keys) {
-				answer += key.text;
-			}
-			if (answer.Equals (password)){
-				Debug.Log ("Answer "+ answer + " is Correct");
-			} else {
-				Debug.Log ("Answer "+ answer + " is Wrong");
-			}
-		} else if (keyValue.Equals("cancel")) {
-			foreach (Text key in keys) {
-				key.text = "";
-			}
-			activeKey = 0;
-		} else if (activeKey < 4) {
-			//keys [activeKey].text = keyValue;
-			position = 
-			activeKey++;
-		}*/
 		currentAmount = 0;
 		position = pos;
 		newPos = new Vector3 (

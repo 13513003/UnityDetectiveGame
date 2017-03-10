@@ -3,6 +3,7 @@
 # =============== #
 Temp/
 Obj/
+/metadata/
 UnityGenerated/
 Library/
 /Library/
