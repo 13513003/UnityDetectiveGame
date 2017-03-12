@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DoorController : MonoBehaviour {
 
 	float smooth = 2f;
-	float DoorOpenAngle = 90f;
+	public float DoorOpenAngle = 90f;
 	bool open;
 	bool enter;
 	bool locked = true;
@@ -35,11 +35,11 @@ public class DoorController : MonoBehaviour {
 	}
 
 
-	void OnGUI(){
+	/*void OnGUI(){
 		if(!locked){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open the door");
 		}
-	}
+	}*/
 
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
@@ -61,5 +61,6 @@ public class DoorController : MonoBehaviour {
 
     public void openDoor() {
         open = !open;
+        Debug.Log("open");
     }
 }
