@@ -36,7 +36,7 @@ public class WalkVR : MonoBehaviour {
         } */
         else
         {
-            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), this.GetType().Name);
+            //GUI.Box(new Rect(0, 0, Screen.width, Screen.height), this.GetType().Name);
             moveForward = false;
             //moveBackward = false;
         }

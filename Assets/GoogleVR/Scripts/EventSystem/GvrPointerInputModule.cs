@@ -65,6 +65,9 @@ public class GvrPointerInputModule : BaseInputModule {
   /// input when not in VR Mode.
   [Tooltip("Whether pointer input is active in VR Mode only (true), or all the time (false).")]
   public bool vrModeOnly = false;
+  public GameObject player;
+  public bool objectHover = true;
+  public double minDistance;
 
   private PointerEventData pointerData;
   private Vector2 lastPose;
@@ -143,7 +146,13 @@ public class GvrPointerInputModule : BaseInputModule {
 
     CastRay();
     UpdateCurrentObject(previousObject);
-    UpdateReticle(previousObject);
+    if (objectHover)
+    {
+        float distance = Vector3.Distance(player.transform.position, previousObject.transform.position);
+        if(distance <= minDistance)
+            UpdateReticle(previousObject);
+    }
+    
 
     // True during the frame that the trigger has been pressed.
     bool triggerDown = Input.GetMouseButtonDown(0);
