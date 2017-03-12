@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: eab19c3c8e187f04a906f2bd6d97d624
+timeCreated: 1489313832
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Calculator
+  fontNames:
+  - Calculator
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -46,12 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DoorController.cs" />
-     <Compile Include="Assets\Scripts\KeyController.cs" />
-     <Compile Include="Assets\Scripts\KeysController.cs" />
-     <Compile Include="Assets\Scripts\LockController.cs" />
-     <Compile Include="Assets\Scripts\NumpadController.cs" />
-     <Compile Include="Assets\Scripts\PadController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\DoorController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\KeyController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\KeysController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\LockController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\NumpadController.cs" />
+     <Compile Include="Assets\Scripts\Lock Mechanism\PadController.cs" />
      <None Include="Assets\Character\How To Use.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

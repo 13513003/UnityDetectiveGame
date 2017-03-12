@@ -100,7 +100,7 @@ public class NumpadController : MonoBehaviour {
 					Debug.Log ("Answer "+ answer + " is Wrong");
 				}
 				answer = "";
-			} else if (activeKey < 4) {
+			} else if (activeKey < keys.Length) {
 				keys [activeKey].text = padControllers[position].getKeyValue();
 				activeKey++;
 			}
