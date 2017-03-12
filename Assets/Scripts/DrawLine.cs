@@ -13,18 +13,20 @@ public class DrawLine : MonoBehaviour {
 	int numPoints;
 	GameObject[] answer;
 
-	public float startWidth = 1.0f;
-	public float endWidth = 1.0f;
-	public float threshold = 0.001f;
+	public float startWidth = 0.1f;
+	public float endWidth = 0.1f;
 	public string selectableAreaTag = "phone_component";
 	public string selectableObjectTag = "unselected";
 	public string selectedObjectTag = "selected";
+	public int numSelectables = 9;
 	public GameObject[] answerSequence;
 	// Use this for initialization
 	void Awake () {
 		thisCamera = Camera.main;
 		lineRenderer = GetComponent<LineRenderer>();
-		answer = new GameObject[answerSequence.Length];
+		answer = new GameObject[numSelectables];
+		lineRenderer.startWidth = startWidth;
+		lineRenderer.endWidth = endWidth;
 	}
 	
 	// Update is called once per frame
@@ -61,14 +63,20 @@ public class DrawLine : MonoBehaviour {
 							answer [numPoints] = hit.transform.gameObject;
 							numPoints++;
 						} else if (hit.collider.transform.tag == selectableAreaTag || hit.collider.transform.tag == selectedObjectTag) {
+							mousePos.z = origin.z;
 							lineRenderer.SetPosition (numPoints, mousePos);
 						}
 					}
 				}
 			} else {
-				for (int i = 0; i < answerSequence.Length; i++) {
-					if (answer [i] != answerSequence [i]) {
-						correct = false;
+				for (int i = 0; i < answer.Length; i++) {
+					if (i < answerSequence.Length) {
+						if (answer [i] != answerSequence [i]) {
+							correct = false;
+						}
+					} else {
+						if (answer [i] != null)
+							correct = false;
 					}
 					answer [i] = null;
 				}
