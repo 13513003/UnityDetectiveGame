@@ -58,4 +58,8 @@ public class DoorController : MonoBehaviour {
 	public void unlockDoor() {
 		locked = false;
 	}
+
+    public void openDoor() {
+        open = !open;
+    }
 }
