@@ -7,12 +7,14 @@ public class DoorController : MonoBehaviour {
 
 	float smooth = 2f;
 	public float DoorOpenAngle = 90f;
+	public GameObject numpadLock;
 	bool open;
 	bool enter;
-	bool locked = true;
-
+	public bool locked = true;
+	//public GameObject lockedMessage;
 	Vector3 defaultRot;
 	Vector3 openRot;
+	float timer;
 
 	void Start(){
 		defaultRot = transform.eulerAngles;
@@ -29,9 +31,10 @@ public class DoorController : MonoBehaviour {
 			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
 		}
 
-		if(Input.GetKeyDown("f")){
-			open = !open;
-		}
+		/*timer += Time.deltaTime;
+		if (timer >= 0.5f && Time.timeScale != 0) {
+			lockedMessage.SetActive (false);
+		}*/
 	}
 
 
@@ -57,10 +60,20 @@ public class DoorController : MonoBehaviour {
 
 	public void unlockDoor() {
 		locked = false;
+		numpadLock.SetActive (false);
+		//lockedMessage.SetActive (false);
 	}
 
     public void openDoor() {
-        open = !open;
-        Debug.Log("open");
+		if (locked) {
+			//lockedMessage.SetActive (true);
+			timer = 0f;
+		} else {
+			open = !open;
+		}
     }
+
+	public void showLockUI() {
+		numpadLock.SetActive (true);
+	}
 }

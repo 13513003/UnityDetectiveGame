@@ -26,6 +26,6 @@ public class PadController : MonoBehaviour {
 	}
 
 	public void onClick() { // use this for VR interaction
-		numPadController.inputAnswer (position, this.transform.position);
+		numPadController.inputAnswer (position);
 	}
 }

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Textures/numpad.psd.meta
 guid: a67d500b52f2b4e43a69cfb7ea05a317
 timeCreated: 1489130738
+=======
+guid: 5050829b7b5214d67869fe24a2387484
+timeCreated: 1489480650
+>>>>>>> 4bdbdbef84e2934b4cd498881e988a4e0e469c9e:Assets/GoogleVR/Demos/Environment/cubeRoomDiffuse4096.psd.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

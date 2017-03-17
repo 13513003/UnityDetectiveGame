@@ -9,6 +9,8 @@ public class WalkVR : MonoBehaviour {
 
     public float speed = 3.0f;
 
+    public float delay = 0.5f;
+
     public bool moveForward, moveBackward;
 
     private CharacterController cc;
@@ -24,7 +26,9 @@ public class WalkVR : MonoBehaviour {
         if (Input.GetButton("Fire1"))
         //if (Input.touchCount > 0)
         {
-            moveForward = true;
+            delay -= Time.deltaTime;
+            if (delay < 0)
+                moveForward = true;
         }
         /*else if (Input.GetButton("Fire2"))
         {
@@ -38,6 +42,7 @@ public class WalkVR : MonoBehaviour {
         {
             //GUI.Box(new Rect(0, 0, Screen.width, Screen.height), this.GetType().Name);
             moveForward = false;
+            delay = 0.5f;
             //moveBackward = false;
         }
 
