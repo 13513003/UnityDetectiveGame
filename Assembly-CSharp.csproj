@@ -150,7 +150,9 @@
      <Compile Include="Assets\Scripts\PressPattern.cs" />
      <Compile Include="Assets\Scripts\PuzzleMoon1.cs" />
      <Compile Include="Assets\Scripts\PuzzleMoon2.cs" />
+     <Compile Include="Assets\Scripts\PuzzleMoon5.cs" />
      <Compile Include="Assets\Scripts\RotatePattern.cs" />
+     <Compile Include="Assets\Scripts\SlidePattern.cs" />
      <Compile Include="Assets\Scripts\SwitchController.cs" />
      <Compile Include="Assets\Scripts\SwitchText.cs" />
      <Compile Include="Assets\Scripts\VR\WalkVR.cs" />

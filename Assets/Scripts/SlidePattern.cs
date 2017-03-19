@@ -2,52 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressPattern : MonoBehaviour {
-	private bool state;
+public class SlidePattern : MonoBehaviour {
+	public int arrow;
+	public int color;
 	private bool unpressbutton;
 	private bool pressbutton;
-	private Vector3 translation = new Vector3(0,-0.3f,0);
+	private Vector3 translation = new Vector3(0,-0.08f,0);
 	private Vector3 targetPress;
 	private Vector3 targetNormal;
 	private float step;
 
 	// Use this for initialization
 	void Start () {
-		state = false;
 		unpressbutton = false;
 		pressbutton = false;
-		step = 3 * Time.deltaTime;
+		step = 1 * Time.deltaTime;
 		targetNormal = new Vector3(transform.position.x,transform.position.y,transform.position.z);
 		targetPress = new Vector3(transform.position.x,transform.position.y,transform.position.z);
 		targetPress += translation;
 	}
 
-	public bool getState() {
-		return state;
-	}
-
 	void OnMouseDown() {
-		state = true;
-		// this.transform.position += translation;
-		StartCoroutine(Check());
-		this.transform.parent.GetComponent<PuzzleMoon2>().checkAnswer();
+		if (!pressbutton && !unpressbutton){
+			StartCoroutine(Press());
+			if (color == 1) {
+				this.transform.parent.parent.GetComponent<PuzzleMoon5>().slideRed(arrow);
+			} else if (color == 2) {
+				this.transform.parent.parent.GetComponent<PuzzleMoon5>().slideGreen(arrow);
+			} else if (color == 3) {
+				this.transform.parent.parent.GetComponent<PuzzleMoon5>().slideYellow(arrow);
+			}
+		}
 	}
 
-	public void unpress() {
-		state = false;
-		StartCoroutine(False());
-		// this.transform.position -= translation;
-	}
-
-	IEnumerator Check() {
+	IEnumerator Press() {
 		pressbutton = true;
         yield return new WaitForSeconds(1);
         pressbutton = false;
+        StartCoroutine(Unpress());
     }
 
-    IEnumerator False() {
-		unpressbutton = true;
-        yield return new WaitForSeconds(1);
+    IEnumerator Unpress() {
+    	unpressbutton = true;
+    	yield return new WaitForSeconds(0.5f);
         unpressbutton = false;
     }
 	
