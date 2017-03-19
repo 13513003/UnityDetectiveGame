@@ -37,14 +37,14 @@ public class SlidePattern : MonoBehaviour {
 
 	IEnumerator Press() {
 		pressbutton = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         pressbutton = false;
         StartCoroutine(Unpress());
     }
 
     IEnumerator Unpress() {
     	unpressbutton = true;
-    	yield return new WaitForSeconds(0.5f);
+    	yield return new WaitForSeconds(0.3f);
         unpressbutton = false;
     }
 	

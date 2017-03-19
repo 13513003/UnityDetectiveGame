@@ -10,7 +10,7 @@ public class KeyController : MonoBehaviour {
 	float timer;
 	float timeBetweenFlicks = 0.5f;
 	float distance = 50f;
-	float time = 0.5f;
+	float time = 50f;
 	string action;
 
 	// Use this for initialization
