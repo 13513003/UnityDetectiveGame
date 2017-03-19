@@ -106,12 +106,10 @@ public class KeysController : MonoBehaviour {
 	void upButtonClick() { // use this for VR interaction
 		this.GetComponentInParent<LockController>().setActiveKey (position);
 		this.GetComponentInParent<LockController>().setAction ("up");
-		this.GetComponentInParent<LockController>().setArrowPosition (this.transform.position.x);
 	}
 
 	void downButtonClick() { // use this for VR interaction
 		this.GetComponentInParent<LockController>().setActiveKey (position);
 		this.GetComponentInParent<LockController>().setAction ("down");
-		this.GetComponentInParent<LockController>().setArrowPosition (this.transform.position.x);
 	}
 }
