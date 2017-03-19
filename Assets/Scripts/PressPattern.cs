@@ -41,13 +41,13 @@ public class PressPattern : MonoBehaviour {
 
 	IEnumerator Check() {
 		pressbutton = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         pressbutton = false;
     }
 
     IEnumerator False() {
 		unpressbutton = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         unpressbutton = false;
     }
 	
