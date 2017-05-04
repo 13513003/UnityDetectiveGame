@@ -23,15 +23,19 @@ public class DoorController : MonoBehaviour {
 
 	//Main function
 	void Update (){
-		if(open){
-			//Open door
-			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
-		}else{
-			//Close door
-			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
+		if (timer <= 1.5f) {
+			if(open){
+				//Open door
+				transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
+			}else{
+				//Close door
+				transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
+			}
 		}
 
-		/*timer += Time.deltaTime;
+
+		timer += Time.deltaTime;
+		/*
 		if (timer >= 0.5f && Time.timeScale != 0) {
 			lockedMessage.SetActive (false);
 		}*/
@@ -67,8 +71,9 @@ public class DoorController : MonoBehaviour {
     public void openDoor() {
 		if (locked) {
 			//lockedMessage.SetActive (true);
-			timer = 0f;
+			//timer = 0f;
 		} else {
+			timer = 0f;
 			open = !open;
 		}
     }
